@@ -101,6 +101,11 @@ cp claude-commands/templates/*.md /path/to/your-project/.claude/project/
    /implement specs/feature-user-authentication.md
    ```
 
+4. **Archive completed specs** (optional):
+   ```
+   ./scripts/archive-spec.sh specs/feature-user-authentication.md
+   ```
+
 That's it! Claude will follow your architecture patterns automatically.
 
 ---
@@ -207,6 +212,40 @@ Total context: ~4,500 tokens (2% of window)
 - Files to modify
 - Step-by-step plan
 - Testing strategy
+
+---
+
+## Managing Specs
+
+After implementing features, you can archive completed specs to keep your `specs/` directory clean.
+
+### Archive Single Spec
+
+```bash
+./scripts/archive-spec.sh specs/feature-dark-mode.md
+```
+
+**Result:** Spec moved to `specs/done/2025-10-17-2154-feature-dark-mode.md`
+
+### Archive All Specs
+
+```bash
+./scripts/archive-all-specs.sh
+```
+
+Archives all `.md` files in `specs/` directory with timestamps.
+
+### View Archived Specs
+
+```bash
+# List archived specs (sorted by time)
+ls -lt specs/done/
+
+# View a specific archived spec
+cat specs/done/2025-10-17-2154-feature-dark-mode.md
+```
+
+**Timestamp format:** `YYYY-MM-DD-HHMM-filename.md` (sortable and human-readable)
 
 ---
 
