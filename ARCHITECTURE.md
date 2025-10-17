@@ -44,11 +44,11 @@ Total: ~4-12K tokens (2-6% of window)
 ```
 /feature "add dark mode"
   ↓ [Universal entry point]
-commands/core/feature.md  
+core/feature.md
   ↓ [Detect technology]
-commands/routers/feature.md
+routers/feature.md
   ↓ [Route to SwiftUI]
-commands/swiftui/feature.md
+swiftui/feature.md
   ↓ [Generate plan]
 specs/feature-dark-mode.md
 ```

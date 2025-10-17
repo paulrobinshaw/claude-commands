@@ -23,12 +23,6 @@ The repository is already set up for dogfooding:
 
 ```
 .claude/
-├── commands/              ← Symlinks to commands/core/
-│   ├── prime
-│   ├── feature
-│   ├── bug
-│   └── chore
-│
 └── project/               ← Claude Commands customization
     ├── README.md          ← Usage guide
     ├── domain.md          ← Command structure, workflows
@@ -94,7 +88,7 @@ The repository is already set up for dogfooding:
 
 3. **What happens:**
    - Analyzes the issue
-   - Identifies root cause (likely in commands/core/prime.md detection logic)
+   - Identifies root cause (likely in core/prime.md detection logic)
    - Generates fix plan
    - Outputs to `specs/bug-prime-python-detection.md`
 

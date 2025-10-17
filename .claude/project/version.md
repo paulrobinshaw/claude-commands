@@ -106,7 +106,7 @@ Step-by-step for Claude
 2. Route to appropriate handler
 3. Pass through arguments
 
-**Example:** commands/core/feature.md
+**Example:** core/feature.md
 
 ### Pattern: Router
 
@@ -115,7 +115,7 @@ Step-by-step for Claude
 2. Route to technology handler
 3. Pass arguments
 
-**Example:** commands/routers/feature.md
+**Example:** routers/feature.md
 
 ### Pattern: Technology Handler
 
@@ -125,7 +125,7 @@ Step-by-step for Claude
 3. Generate implementation plan
 4. Output to specs/
 
-**Example:** commands/swiftui/feature.md
+**Example:** swiftui/feature.md
 
 ---
 
@@ -152,7 +152,7 @@ footer (optional)
 ```
 feat(core): add bug command entry point
 
-Add universal bug fix planner to commands/core/.
+Add universal bug fix planner to core/.
 Routes to technology-specific handlers.
 
 Closes #42
@@ -251,10 +251,10 @@ Closes #42
 
 When adding React, Python, etc.:
 
-1. **Create directory:** commands/[tech]/
-2. **Create primer:** commands/[tech]/prime.md
-3. **Create architecture:** commands/[tech]/architecture.md
-4. **Create feature planner:** commands/[tech]/feature.md
+1. **Create directory:** [tech]/
+2. **Create primer:** [tech]/prime.md
+3. **Create architecture:** [tech]/architecture.md
+4. **Create feature planner:** [tech]/feature.md
 5. **Update core/prime.md:** Add detection
 6. **Update routers:** Add routing
 7. **Test:** Verify detection and routing

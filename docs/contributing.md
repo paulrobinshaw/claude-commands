@@ -117,11 +117,7 @@ Documentation improvements are always welcome!
    cd test-project
    # Create test SwiftUI project
    # Link to your claude-commands fork
-   ln -s path/to/your/claude-commands .claude-commands
-   mkdir -p .claude/commands
-   cd .claude/commands
-   ln -s ../../.claude-commands/commands/core/prime.md prime
-   ln -s ../../.claude-commands/commands/core/feature.md feature
+   ln -s path/to/your/claude-commands .claude/commands
    ```
 
 4. **Make changes**
@@ -351,46 +347,46 @@ Want to add React or Python support? Here's how:
 ### Step 1: Create Technology Directory
 
 ```bash
-mkdir commands/[technology]
+mkdir [technology]
 ```
 
 ### Step 2: Create Primer
 
-`commands/[technology]/prime.md`:
+`[technology]/prime.md`:
 - Detect technology
 - Load architecture
 - Report customization
 
 ### Step 3: Create Architecture
 
-`commands/[technology]/architecture.md`:
+`[technology]/architecture.md`:
 - Define patterns
 - Document conventions
 - Provide examples
 
 ### Step 4: Create Feature Planner
 
-`commands/[technology]/feature.md`:
+`[technology]/feature.md`:
 - Smart context loading
 - Plan generation
 - Architecture enforcement
 
 ### Step 5: Update Core
 
-Add detection to `commands/core/prime.md`:
+Add detection to `core/prime.md`:
 ```markdown
 ### [Technology] Detection
 [detection commands]
 
-If found → Route to commands/[technology]/prime.md
+If found → Route to [technology]/prime.md
 ```
 
 ### Step 6: Update Router
 
-Add routing to `commands/routers/feature.md`:
+Add routing to `routers/feature.md`:
 ```markdown
 ### If [Technology]
-Execute: commands/[technology]/feature.md
+Execute: [technology]/feature.md
 ```
 
 ### Step 7: Test

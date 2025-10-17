@@ -30,7 +30,7 @@ Documentation of domain knowledge for the Claude Commands project itself.
 **Properties:**
 - `name` (String): Command name (prime, feature, bug, chore)
 - `type` (String): "core", "router", "technology-specific", or "loader"
-- `path` (String): File path (e.g., commands/core/prime.md)
+- `path` (String): File path (e.g., core/prime.md)
 - `arguments` (String): User-provided description
 
 **Relationships:**
@@ -48,9 +48,9 @@ Documentation of domain knowledge for the Claude Commands project itself.
 ```
 Command: /feature "add dark mode"
 Type: core
-Path: commands/core/feature.md
-Routes to: commands/routers/feature.md
-Then to: commands/swiftui/feature.md
+Path: core/feature.md
+Routes to: routers/feature.md
+Then to: swiftui/feature.md
 Output: specs/feature-dark-mode.md
 ```
 
@@ -93,7 +93,7 @@ Loaded when: UI keywords detected (screen, view, button, etc.)
 - `name` (String): Technology name (SwiftUI, React, Python)
 - `status` (String): "supported", "planned", "experimental"
 - `version` (String): Version support (e.g., "iOS 17+")
-- `commands_path` (String): Directory (e.g., commands/swiftui/)
+- `commands_path` (String): Directory (e.g., swiftui/)
 
 **Relationships:**
 - One technology has many commands
@@ -184,10 +184,10 @@ if (needs_context):
 
 Input: /feature "add dark mode", technology=SwiftUI, feature_type=UI
 Path:
-1. commands/core/feature.md (entry point)
-2. commands/routers/feature.md (detect and route)
-3. commands/swiftui/feature.md (SwiftUI handler)
-4. commands/loaders/design-system.md (load DS)
+1. core/feature.md (entry point)
+2. routers/feature.md (detect and route)
+3. swiftui/feature.md (SwiftUI handler)
+4. loaders/design-system.md (load DS)
 5. Generate: specs/feature-dark-mode.md
 
 ---
@@ -259,25 +259,25 @@ Path:
 
 1. **Create Core Command**
    - Input: Command name (e.g., "refactor")
-   - Action: Create commands/core/refactor.md
+   - Action: Create core/refactor.md
    - Output: Universal entry point
    - Example: Similar to feature.md or bug.md
 
 2. **Create Router**
    - Input: Core command
-   - Action: Create commands/routers/refactor.md
+   - Action: Create routers/refactor.md
    - Output: Technology routing logic
    - Example: Detect tech, route to handlers
 
 3. **Create Technology Handlers**
    - Input: Router
-   - Action: Create commands/swiftui/refactor.md (and others)
+   - Action: Create swiftui/refactor.md (and others)
    - Output: Technology-specific logic
    - Example: SwiftUI-specific refactoring patterns
 
 4. **Create Symlink**
    - Input: Core command
-   - Action: ln -s ../../commands/core/refactor.md .claude/commands/refactor
+   - Action: ln -s ../../core/refactor.md .claude/commands/refactor
    - Output: Command available to users
    - Example: /refactor now works
 
@@ -308,23 +308,23 @@ Path:
 **Steps:**
 
 1. **Create Technology Directory**
-   - Action: mkdir commands/react
-   - Output: commands/react/
+   - Action: mkdir react
+   - Output: react/
 
 2. **Create Primer**
-   - Action: Create commands/react/prime.md
+   - Action: Create react/prime.md
    - Output: React-specific context loading
 
 3. **Create Architecture**
-   - Action: Create commands/react/architecture.md
+   - Action: Create react/architecture.md
    - Output: React patterns documented
 
 4. **Create Feature Planner**
-   - Action: Create commands/react/feature.md
+   - Action: Create react/feature.md
    - Output: React-specific feature planning
 
 5. **Update Core Prime**
-   - Action: Add React detection to commands/core/prime.md
+   - Action: Add React detection to core/prime.md
    - Output: Auto-detects React projects
 
 6. **Update Routers**
@@ -398,7 +398,7 @@ Path:
 
 **Constraint:** Core commands cannot contain technology-specific logic
 
-**Applies To:** commands/core/*, commands/routers/*
+**Applies To:** core/*, routers/*
 
 **Rationale:** Enable easy addition of new technologies
 

@@ -11,11 +11,11 @@
 
 Claude Commands is a collection of **slash command templates** for [Claude Code](https://claude.ai/claude-code) that help you:
 
-- =Ë **Plan features** with architecture patterns built-in
-- <¯ **Maintain consistency** across your codebase
-- =€ **Move faster** with smart context loading
-- =Ú **Document domain knowledge** for AI-assisted development
-- <¨ **Enforce design systems** automatically
+- =ï¿½ **Plan features** with architecture patterns built-in
+- <ï¿½ **Maintain consistency** across your codebase
+- =ï¿½ **Move faster** with smart context loading
+- =ï¿½ **Document domain knowledge** for AI-assisted development
+- <ï¿½ **Enforce design systems** automatically
 
 **Philosophy:** Load minimal context, follow established patterns, generate high-quality code.
 
@@ -23,21 +23,21 @@ Claude Commands is a collection of **slash command templates** for [Claude Code]
 
 ## Features
 
-### <¯ Smart Commands
+### <ï¿½ Smart Commands
 
 - `/prime` - Load project context in < 2 seconds (~4.5K tokens)
 - `/feature` - Plan features with auto-loading design system & domain knowledge
 - `/bug` - Plan bug fixes with root cause analysis
 - `/chore` - Plan refactors and maintenance tasks
 
-### <× Architecture Enforcement
+### <ï¿½ Architecture Enforcement
 
 - **SwiftUI:** NO ViewModels pattern (@Observable services)
 - **Design System:** Token-based, no hardcoded values
 - **Domain-Driven:** Business logic in services, not views
 - **Type-Safe:** Full type checking and validation
 
-### ¡ Lazy Loading
+### ï¿½ Lazy Loading
 
 - Architecture: ~3K tokens (always loaded)
 - Design System: ~2K tokens (auto-loads for UI features)
@@ -56,29 +56,32 @@ Claude Commands is a collection of **slash command templates** for [Claude Code]
 
 ### Installation
 
-**Option 1: Git Submodule (Recommended)**
-
-```bash
-# In your project root
-git submodule add https://github.com/yourusername/claude-commands .claude-commands
-
-# Set up .claude directory
-mkdir -p .claude/commands
-cd .claude/commands
-ln -s ../../.claude-commands/commands/core/prime.md prime
-ln -s ../../.claude-commands/commands/core/feature.md feature
-ln -s ../../.claude-commands/commands/routers/bug.md bug
-ln -s ../../.claude-commands/commands/routers/chore.md chore
-```
-
-**Option 2: Direct Copy**
+**Quick Install (Recommended)**
 
 ```bash
 # Clone the repository
 git clone https://github.com/yourusername/claude-commands.git
+cd claude-commands
 
-# Copy to your project
-cp -r claude-commands/.claude your-project/.claude
+# Run installer script
+./scripts/install.sh /path/to/your/project
+
+# Or from your project directory:
+cd /path/to/your/project
+/path/to/claude-commands/scripts/install.sh .
+```
+
+**Manual Installation**
+
+```bash
+# 1. Clone the repository
+git clone https://github.com/yourusername/claude-commands.git
+
+# 2. Copy the distribution to your project
+cp -r claude-commands/dist/* /path/to/your-project/.claude/
+
+# 3. (Optional) Copy customization templates
+cp claude-commands/templates/*.md /path/to/your-project/.claude/project/
 ```
 
 ### First Use
@@ -300,16 +303,16 @@ cp templates/mcp-template.md .claude/project/mcp.md
 
 ```
 User: /feature "add dark mode"
-  “
-commands/core/feature.md (entry point)
-  “ (check if primed)
-commands/routers/feature.md (detect technology)
-  “ (route to SwiftUI)
-commands/swiftui/feature.md (SwiftUI-specific planner)
-  “ (detect UI keywords)
-commands/loaders/design-system.md (auto-load design system)
-  “
-Generate plan ’ specs/feature-dark-mode.md
+  ï¿½
+core/feature.md (entry point)
+  ï¿½ (check if primed)
+routers/feature.md (detect technology)
+  ï¿½ (route to SwiftUI)
+swiftui/feature.md (SwiftUI-specific planner)
+  ï¿½ (detect UI keywords)
+loaders/design-system.md (auto-load design system)
+  ï¿½
+Generate plan ï¿½ specs/feature-dark-mode.md
 ```
 
 ### Context Loading Strategy
@@ -364,7 +367,7 @@ Full support:
 - Context loaders (design system, domain)
 - Version strategy (iOS 17+)
 
-### =§ React (Coming in v2.0)
+### =ï¿½ React (Coming in v2.0)
 
 Planned:
 - Component-based architecture
@@ -372,7 +375,7 @@ Planned:
 - State management
 - Testing templates
 
-### =§ Python (Coming in v2.0)
+### =ï¿½ Python (Coming in v2.0)
 
 Planned:
 - Module structure
@@ -399,10 +402,10 @@ Planned:
 ```
 User: "Add dark mode"
 Claude: "I'll add dark mode. Here's the code:"
-  ’ Hardcoded colors: Color(red: 0.2, green: 0.3, blue: 0.5)
-  ’ Random patterns: ObservableObject ViewModel
-  ’ Inconsistent: Every feature looks different
-  ’ No tests: "I'll leave testing to you"
+  ï¿½ Hardcoded colors: Color(red: 0.2, green: 0.3, blue: 0.5)
+  ï¿½ Random patterns: ObservableObject ViewModel
+  ï¿½ Inconsistent: Every feature looks different
+  ï¿½ No tests: "I'll leave testing to you"
 ```
 
 ### After Claude Commands
@@ -444,40 +447,40 @@ Output: specs/feature-dark-mode.md
 
 ```
 claude-commands/
-   README.md                  You are here
-   ARCHITECTURE.md            System design
-   CHANGELOG.md               Version history
-   LICENSE                    MIT License
+   README.md                 ï¿½ You are here
+   ARCHITECTURE.md           ï¿½ System design
+   CHANGELOG.md              ï¿½ Version history
+   LICENSE                   ï¿½ MIT License
 
-   .claude/                   Configuration for this repo
-      commands/              Symlinks to commands
+   .claude/                  ï¿½ Configuration for this repo
+      commands/             ï¿½ Symlinks to commands
          prime
          feature
          bug
          chore
-      project/               (empty - for users to customize)
+      project/              ï¿½ (empty - for users to customize)
 
-   commands/                  Command templates
-      core/                  Core commands (prime, feature)
-      routers/               Technology routing
-      loaders/               Context loaders
-      swiftui/               SwiftUI-specific commands
+   commands/                 ï¿½ Command templates
+      core/                 ï¿½ Core commands (prime, feature)
+      routers/              ï¿½ Technology routing
+      loaders/              ï¿½ Context loaders
+      swiftui/              ï¿½ SwiftUI-specific commands
 
-   templates/                 Customization templates
+   templates/                ï¿½ Customization templates
       design-system-template.md
       domain-template.md
       version-template.md
       mcp-template.md
 
-   examples/                  Example customizations
-      baking-app/            Professional baking app example
+   examples/                 ï¿½ Example customizations
+      baking-app/           ï¿½ Professional baking app example
           README.md
           design-system.md
           domain.md
           version.md
           mcp.md
 
-   docs/                      Documentation
+   docs/                     ï¿½ Documentation
        getting-started.md
        customization-guide.md
        contributing.md
@@ -557,4 +560,4 @@ If you find Claude Commands useful, please P star the repo!
 
 **Made with d for developers who want consistent, high-quality AI-assisted development.**
 
-Happy coding! <‰
+Happy coding! <ï¿½
