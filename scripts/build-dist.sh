@@ -9,13 +9,13 @@ echo "🔨 Building distribution package..."
 rm -rf dist/
 mkdir -p dist/{commands,project}
 
-# Copy core commands (remove .md extension for cleaner slash commands)
+# Copy core commands (MUST preserve .md extension for Claude Code)
 echo "📦 Copying core commands..."
-cp core/prime.md dist/commands/prime
-cp core/feature.md dist/commands/feature
-cp core/bug.md dist/commands/bug
-cp core/chore.md dist/commands/chore
-cp core/implement.md dist/commands/implement
+cp core/prime.md dist/commands/prime.md
+cp core/feature.md dist/commands/feature.md
+cp core/bug.md dist/commands/bug.md
+cp core/chore.md dist/commands/chore.md
+cp core/implement.md dist/commands/implement.md
 
 # Copy supporting directories
 echo "📦 Copying supporting files..."
