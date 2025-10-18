@@ -1,5 +1,13 @@
 # Load Design System
 
+**File Type:** Loader Command
+**Reads:** `.claude/project/design-system.md` (your project-specific design tokens)
+**Usage:** `/design-system` (or `/ds`) to manually load, or auto-loads for UI features
+**Edit this file:** Only if modifying command logic (rarely)
+**Edit knowledge file:** `.claude/project/design-system.md` for your design customization
+
+---
+
 Manually loads design system context when needed.
 
 **Philosophy:** On-demand loading for efficiency.

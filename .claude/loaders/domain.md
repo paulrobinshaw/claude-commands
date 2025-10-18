@@ -1,5 +1,13 @@
 # Load Domain Knowledge
 
+**File Type:** Loader Command
+**Reads:** `.claude/project/domain.md` (your project-specific domain knowledge)
+**Usage:** `/domain` to manually load, or auto-loads during feature planning
+**Edit this file:** Only if modifying command logic (rarely)
+**Edit knowledge file:** `.claude/project/domain.md` for your domain customization
+
+---
+
 Manually loads domain knowledge context when needed.
 
 **Philosophy:** On-demand loading for efficiency.

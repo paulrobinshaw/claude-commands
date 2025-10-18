@@ -1,5 +1,12 @@
 # Design System Template
 
+**File Type:** Project-Specific Knowledge (Template)
+**Loaded by:** `.claude/loaders/design-system.md` command
+**Usage:** Copy to `.claude/project/design-system.md` and customize for your project
+**Auto-loaded:** When feature planners detect UI work
+
+---
+
 **INSTRUCTIONS:** Copy this template to `.claude/project/design-system.md` and customize for your project.
 
 ---

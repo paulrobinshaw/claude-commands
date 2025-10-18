@@ -1,5 +1,12 @@
 # Domain Knowledge Template
 
+**File Type:** Project-Specific Knowledge (Template)
+**Loaded by:** `.claude/loaders/domain.md` command
+**Usage:** Copy to `.claude/project/domain.md` and customize for your project
+**Auto-loaded:** When feature planners detect domain keywords
+
+---
+
 **INSTRUCTIONS:** Copy this template to `.claude/project/domain.md` and customize for your project's domain.
 
 ---
